@@ -74,10 +74,60 @@ function playround(){
 }
 
 function playGame(){
+    let computerScore = 0;
+    let humanScore = 0;
+    
     for(let i = 0; i < 5; i++){
+
        result = playround();
+       switch(result){
+        case "You both chose rock, it's a tie!":
+            computerScore += 1;
+            humanScore += 1;
+            break;
+        case "The computer chose paper, you lost!":
+            computerScore += 1;
+            break;
+        case "The computer chose scissors, you won!":
+            humanScore += 1;
+            break;
+        case "The computer chose rock, you won!":
+            humanScore += 1;
+            break;
+        case "You both chose paper, it's a tie!":
+            computerScore += 1;
+            humanScore += 1;
+            break;
+        case "The computer chose scissors, you lost!":
+            computerScore += 1;
+            break;
+        case "The computer chose rock, you lost!":
+            computerScore += 1;
+            break;
+        case "The computer chose paper, you won!":
+            humanScore += 1;
+            break;
+        case "You both chose scissors, it's a tie!":
+            humanScore += 1;
+            computerScore += 1;
+            break;
+        
+       }
        console.log(result);
     }
+
+    if(humanScore > computerScore){
+        console.log(`You won the game ${humanScore}:${computerScore}!`);
+    }
+
+    else if(humanScore < computerScore){
+        console.log(`You lost the game ${humanScore}:${computerScore}!`);
+    }
+
+    else{
+        console.log(`It's a tie! ${humanScore}:${computerScore}`);
+    }
+    
 }
 
 playGame();
