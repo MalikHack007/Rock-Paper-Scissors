@@ -100,7 +100,31 @@ function playround(){
     let resultCard = document.querySelector('.result')
     humandScoreCard.textContent = `Your Score: ${humanScore}`;
     computerScoreCard.textContent = `Computer Score: ${computerScore}`;
-    resultCard.textContent = `${result}`;
+ 
+
+    if(computerScore === 5 || humanScore === 5){
+        if(computerScore === 5){
+            resultCard.textContent = `You lost the game! Final score
+            ${humanScore} : ${computerScore}`;
+            humanScore = 0;
+            computerScore = 0;
+        }
+
+        else{
+             resultCard.textContent = `You won the game! Final score
+             ${humanScore} : ${computerScore}`;
+             humanScore = 0;
+             computerScore = 0;
+        }
+    }
+
+    else{
+        resultCard.textContent = `${result}`;
+    }
+
+
+
+
 }
 
 
